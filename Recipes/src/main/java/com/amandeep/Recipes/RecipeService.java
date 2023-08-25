@@ -14,7 +14,7 @@ public class RecipeService {
     public List<Recipe> allRecipes(){
         return recipeRepository.findAll();
     }
-    public Optional<Recipe> singleRecipe(String Title){
-        return recipeRepository.findRecipeByTitle(Title);
+    public Optional<Recipe> singleRecipe(int ID){
+        return recipeRepository.findRecipeByID(ID);
     }
 }

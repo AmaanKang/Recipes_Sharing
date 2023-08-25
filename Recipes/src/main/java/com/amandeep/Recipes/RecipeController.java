@@ -21,8 +21,8 @@ public class RecipeController {
     public ResponseEntity<List<Recipe>> getAllMovies(){
         return new ResponseEntity<>(recipeService.allRecipes(), HttpStatus.OK);
     }
-    @GetMapping("/{Title}")
-    public ResponseEntity<Optional<Recipe>> getSingleRecipe(@PathVariable String Title){
-        return new ResponseEntity<>(recipeService.singleRecipe(Title),HttpStatus.OK);
+    @GetMapping("/{ID}")
+    public ResponseEntity<Optional<Recipe>> getSingleRecipe(@PathVariable int ID){
+        return new ResponseEntity<>(recipeService.singleRecipe(ID),HttpStatus.OK);
     }
 }
