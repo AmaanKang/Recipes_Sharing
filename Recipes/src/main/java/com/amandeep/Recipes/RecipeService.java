@@ -17,4 +17,12 @@ public class RecipeService {
     public Optional<Recipe> singleRecipe(int ID){
         return recipeRepository.findRecipeByID(ID);
     }
+
+    public Recipe createRecipe(String title,String ingredients,String instructions,String image_Name){
+        long allIds = recipeRepository.count();
+        int newId = (int) ((allIds)+1);
+        Recipe newRecipe = new Recipe(newId, title,ingredients,instructions,image_Name);
+        recipeRepository.insert(newRecipe);
+        return newRecipe;
+    }
 }
