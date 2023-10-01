@@ -14,6 +14,7 @@ import java.util.List;
 @Document(collection = "Recipes")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Recipe {
     @Id
     private ObjectId _Id;
@@ -22,7 +23,7 @@ public class Recipe {
     private String Ingredients;
     private String Instructions;
     private String Image_Name;
-    private List<String> Cleaned_Ingredients;
+    private String Cleaned_Ingredients;
     @DocumentReference
     private List<Review> reviewIds;
 
@@ -32,42 +33,6 @@ public class Recipe {
         this.Ingredients = ingredients;
         this.Instructions = instructions;
         this.Image_Name = image_Name;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        this.Cleaned_Ingredients = "";
     }
 }
