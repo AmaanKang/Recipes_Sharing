@@ -10,6 +10,7 @@ public class UserService {
 
     public User createUser(String emailAddress, String password){
         User user = new User(emailAddress,password);
+
         userRepository.insert(user);
         return user;
     }
