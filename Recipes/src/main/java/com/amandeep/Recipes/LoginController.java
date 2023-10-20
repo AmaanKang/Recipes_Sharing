@@ -15,10 +15,11 @@ public class LoginController {
 
     @PostMapping
     public int loginUser(@RequestBody Map<String,String> payload){
-        if(userService.allUsers().contains(new User(payload.get("emailAddress"),payload.get("password")))){
+        User user = new User(payload.get("emailAddress"),payload.get("password"));
+        if(userService.allUsers().contains(user)){
             return 1;
         }else{
-            return 0;
+            return payload.get("password").hashCode();
         }
     }
 }
