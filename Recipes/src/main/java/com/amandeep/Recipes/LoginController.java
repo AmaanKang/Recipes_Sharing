@@ -15,8 +15,9 @@ public class LoginController {
 
     @PostMapping
     public int loginUser(@RequestBody Map<String,String> payload){
-        User user = new User(payload.get("emailAddress"),payload.get("password"));
-        if(userService.allUsers().contains(user)){
+        if(userService.allUsers()
+                .stream()
+                .anyMatch(u -> u.getEmailAddress().equals(payload.get("emailAddress")) && u.getPassword() == payload.get("password").hashCode())){
             return 1;
         }else{
             return payload.get("password").hashCode();
