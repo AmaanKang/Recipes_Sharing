@@ -1,4 +1,7 @@
-# Recipes_Sharing
-This web application is created to share and review food recipes.
-The current repository contains only the API endpoints for the web application. The endpoints are created by using Java, Spring Boot and Mongo DB database.
-The users can register, login, view, create, search recipes by using the frontend app.
+
+This Recipe Sharing App is called Recibakery and works along with an API to display recipes to the user. The users can register and login to the app. They can create new recipes and add reviews on the already added recipes.
+
+# Technolgies Used
+
+This repo contains the backend for the app where Java has been used to build the API. This API project accounts for all create, edit, read and delete operations of the app.
+Maven has been used as build tool and MongoDB is the database where the Recipes datat is located.
